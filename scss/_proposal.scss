@@ -1,0 +1,82 @@
+.proposal {
+    width: 100%;
+    display: inline-grid;
+    justify-items: end;
+    padding: 100px 0px;
+    color: $color;
+    background: url(../img/Group.png) no-repeat;
+    background-size: contain;
+    overflow-x: clip;
+
+    &__form {
+        transform: translateX(60em);
+        padding: 50px;
+        background: $itemBackground;
+        border-radius: $borderRadius;
+    }
+
+    &__form>*:not(:first-child) {
+        margin-top: 20px;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 37px;
+        line-height: 45px;
+    }
+
+    span {
+        font-weight: normal;
+        font-size: 37px;
+        line-height: 45px;
+        color: rgb(78, 78, 78);
+    }
+
+    &__text {
+        max-width: 693px;
+    }
+
+    &__inner {
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__input {
+        font-size: 20px;
+        flex-grow: 1;
+        margin-right: 0px;
+        background: none;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(79, 79, 79);
+        border-image: initial;
+        border-radius: 2px;
+        padding: 23px 27px;
+    }
+
+    &__btn {
+        padding: 25px 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .proposal {
+        padding: 0px 0px;
+    }
+}
+
+@media (max-width: 450px) {
+    .proposal__form {
+        padding: 25px;
+    }
+
+    .proposal__title {
+        font-size: clamp(2.063rem, 1.447rem + 3.08vw, 2.313rem);
+    }
+
+    .proposal__input {
+        padding: 23px 10px;
+        font-size: 18px;
+    }
+}

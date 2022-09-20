@@ -1,0 +1,234 @@
+.header {
+    padding-top: 32px;
+    padding-bottom: 20pc;
+    background: rgb(23, 23, 23);
+    background-image: url(../img/Mask.png);
+    background-repeat: no-repeat;
+    background-position: right top 121px;
+    overflow-x: clip;
+
+    &__content {
+        max-width: 774px;
+        margin-left: clamp(1.875rem, -0.903rem + 13.89vw, 15.625rem);
+        margin-top: clamp(1.875rem, -0.271rem + 21.73vh, 12.5rem);
+    }
+
+    &__content>*:not(:first-child) {
+        margin-top: 23px;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 52px;
+        line-height: 61px;
+    }
+
+    &__inner button+button {
+        margin-left: 32px;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    border: 2px solid rgb(79, 79, 79);
+    padding: 12px 8px;
+    position: relative;
+    text-transform: uppercase;
+
+    &__logo {
+        flex-grow: 1;
+    }
+
+    .order {
+        text-transform: initial;
+        margin-left: auto;
+        border-radius: 4px;
+        padding: 14px 30px;
+        border: 4px solid $btnborder;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-grow: 1;
+        font-size: 16px;
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__link {
+        color: $mainColor;
+        text-decoration: none;
+    }
+
+    &__link:hover {
+        color: $btnborder;
+    }
+
+    &__left {
+        border: 2px solid rgb(79, 79, 79);
+        padding: 12px 8px;
+        display: inline-flex;
+        flex-direction: column;
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        height: 750px;
+        justify-content: flex-end;
+        width: 90px;
+        transition: all 0.3s cubic-bezier(0, 0, 0.76, 0.5);
+    }
+
+    &__left>* {
+        margin-bottom: 20px;
+    }
+}
+
+.btn-menu {
+    height: 35px;
+    width: 40px;
+    position: relative;
+    margin: 13px 0px;
+    display: none;
+
+    &__line {
+        width: 100%;
+        height: 3px;
+        background: rgb(79, 79, 79);
+        display: block;
+        transition: all 0.9s ease-out;
+    }
+
+    &__line::before,
+    &__line::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: rgb(79, 79, 79);
+        display: block;
+    }
+
+    &__line::before {
+        top: 16px;
+    }
+
+    &__line::after {
+        bottom: 0;
+    }
+}
+
+.btn-menu_active {
+    .btn-menu__line {
+        top: 17px;
+        transform: rotate(-45deg);
+        position: absolute;
+    }
+
+    .btn-menu__line::before {
+        transform: rotate(268deg);
+        top: 1px;
+        left: 1px;
+    }
+
+    .btn-menu__line::after {
+        opacity: -1;
+    }
+}
+
+@media (max-width:1270px) {
+    .nav__menu {
+        right: -400px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 15px;
+        background: #252529;
+        position: absolute;
+        top: 87px;
+        padding: 30px;
+        z-index: 1;
+        transition: all 0.3s cubic-bezier(0, 0, 0.76, 0.5);
+    }
+
+    .nav__item {
+        padding: 30px;
+    }
+
+    .nav__logo {
+        flex-grow: 0;
+    }
+
+    .order {
+        margin: 0px 25px 25px 0px;
+    }
+
+    .header {
+        background-blend-mode: overlay;
+        padding-bottom: clamp(15.313rem, 14.239rem + 5.37vw, 20.625rem);
+    }
+
+    .btn-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav__menu_active {
+        right: -2px;
+    }
+}
+
+@media (max-width:930px) {
+    .nav__left {
+        background: #252529;
+        left: -113px;
+        z-index: 1;
+    }
+
+    .nav__left_active {
+        left: -2px;
+    }
+
+    .header__content {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width:750px) {
+    .header__inner {
+        display: grid;
+        gap: 50px;
+    }
+
+    .btn-main {
+        grid-row-end: 3;
+        padding: 18px 30px;
+    }
+
+    .header__inner button+button {
+        margin-left: auto;
+    }
+}
+
+@media (max-width:440px) {
+    .header {
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+@media (max-width:360px) {
+    .nav__left {
+        border: none;
+        top: 670px;
+        height: min-content;
+    }
+
+    .nav__left_active {
+        left: auto;
+        right: 0px;
+    }
+}

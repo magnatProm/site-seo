@@ -1,0 +1,195 @@
+.timer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 250px));
+    gap: 38px;
+    justify-content: space-around;
+
+    &__item {
+        text-align: center;
+    }
+
+    &__content>*:not(:first-child) {
+        margin-top: 20px;
+    }
+
+    &__number {
+        font-weight: bold;
+        font-size: 32px;
+    }
+}
+
+.news {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 36px;
+    justify-items: end;
+    background: url(../img/Rectangle.png) no-repeat;
+    background-size: contain;
+    background-position: -86px;
+
+    &__carousel {
+        overflow-x: hidden;
+        display: flex;
+        gap: 38px;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    &__carousel::-webkit-scrollbar {
+        width: 10px;
+        background-color: #252529;
+        height: 15px;
+    }
+
+    &__carousel::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: black;
+    }
+
+    &__wrapper {
+        padding: 0px clamp(1rem, -16.235rem + 24.15vw, 12.5rem);
+    }
+
+    &__item {
+        background: $itemBackground-2;
+        padding: 35px 24px;
+        border-radius: $borderRadius;
+        min-width: 290px;
+        animation: newsAnimation 1s ease 0s 1 normal forwards;
+    }
+
+    @keyframes newsAnimation {
+        0% {
+            opacity: 0;
+            transform: translateX(-250px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    &__content>*:not(:first-child) {
+        margin-top: 30px;
+    }
+
+    &__btn {
+        background: $btnNewsBackground;
+        border-radius: $borderRadius;
+        padding: 14px 30px;
+    }
+
+    &__btn:hover {
+        animation: myAnim 2s ease 0s infinite normal forwards;
+    }
+
+    @keyframes myAnim {
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+            transform-origin: 50% 100%;
+        }
+
+        10% {
+            transform: rotate(2deg);
+        }
+
+        20%,
+        40%,
+        60% {
+            transform: rotate(-4deg);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: rotate(4deg);
+        }
+
+        80% {
+            transform: rotate(-2deg);
+        }
+
+        90% {
+            transform: rotate(2deg);
+        }
+    }
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 32%));
+    gap: 20px;
+    font-size: 16px;
+    line-height: 160%;
+
+    &__wrapper {
+        padding: 50px;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 24px;
+    }
+}
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background: #44484cd6;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    display: none;
+    animation: modalAnim 1s ease 0s 1 normal forwards;
+
+    &__active {
+        display: grid;
+    }
+
+    @keyframes modalAnim {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &__content>div {
+        display: grid;
+        gap: 20px;
+    }
+
+    &__dialog {
+        max-height: 80vh;
+        max-width: 380px;
+        background: $itemBackground;
+        padding: 35px 24px;
+        border-radius: $borderRadius;
+        font-size: 18px;
+
+        overflow-y: scroll;
+    }
+
+    &__dialog::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    &__content {
+        color: initial;
+    }
+
+    &__close {
+        font-size: 34px;
+        text-align: end;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+}

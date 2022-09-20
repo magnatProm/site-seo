@@ -1,0 +1,139 @@
+$mainColor: #FFFFFF;
+$color: #000000;
+
+$borderRadius: 4px;
+
+$background: rgb(20, 20, 20);
+$itemBackground: rgb(255, 255, 255);
+$itemBackground-2: rgb(31, 32, 37);
+
+$btnMainBackground: linear-gradient(90deg, rgb(255, 81, 47) 0%, rgb(250, 103, 40) 58.58%, rgb(240, 152, 25) 100%);
+$btnBackground: rgb(37, 37, 41);
+$btnNewsBackground: rgb(255, 255, 255);
+$btnborder: rgb(252, 99, 42);
+$lineHeight: 125.69%;
+
+
+@mixin position($sum...) {
+    position: absolute;
+    top: $sum;
+    right: $sum;
+    left: $sum;
+    bottom: $sum;
+    opacity: $sum;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: sans-serif;
+    background: rgb(0, 0, 0);
+    color: $mainColor;
+    line-height: $lineHeight;
+    font-size: 20px;
+}
+
+*[class*="wrapper"] {
+    max-width: 1904px;
+    padding: 0px 16px;
+    margin: auto;
+}
+
+.btn-main {
+    color: $mainColor;
+    background: $btnMainBackground;
+    border-radius: 4px;
+    padding: 18px 40px;
+    transition: .9s all;
+}
+
+.btn-main:hover {
+    background: linear-gradient(90deg, rgb(255, 81, 47) 0%, rgb(250, 103, 40) 5.58%, rgb(240, 152, 25)110px);
+}
+
+.btn-main_active {
+    position: relative;
+}
+
+// __________
+.btn-main_active:before {
+    content: '';
+    opacity: 0.5;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: 0;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+}
+
+.btn-main_active:hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+// __________
+.btn,
+.effect-title {
+    color: inherit;
+    padding: 18px 26px;
+    background: rgb(37, 37, 41);
+    border-radius: 4px;
+    transition: .3s all;
+}
+
+.btn:hover {
+    transform: scale(1.1, 1.2);
+}
+
+.black-btn {
+    @include position(0);
+}
+
+.img-btn {
+    height: 78px;
+    width: inherit;
+    background-image: url(../img/moon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.background {
+    background: $background;
+}
+
+.work__item:hover,
+.skill__item:hover {
+    box-shadow: rgb(100 100 145) 0px 0px 30px 12px inset;
+}
+
+[class*="item"]:not(.news__item) {
+    transition: 2s all;
+    opacity: 0;
+}
+
+@import "_header.scss";
+@import "_main.scss";
+@import "_main-skill.scss";
+@import "_proposal.scss";
+@import "_price.scss";
+@import "_additionall.scss";
+@import "_contacts.scss";
+@import "_black-style.scss";

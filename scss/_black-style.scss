@@ -1,0 +1,44 @@
+.black{
+    background: #ffffff;
+    color: #000000;
+    .header{
+        background: #f8e8db;
+    }
+    .nav__link:hover {
+        color: #c28655;
+    }
+    .btn, .effect-title{
+        background: rgb(246 220 199);
+    }
+    .background{
+        background: #f8e8db;
+    }
+    .work__item , .price__item , .proposal__form{
+        background: #ffe5cf;
+    }
+    .skill__item , .news__item{
+        background: #f1c1a1;
+    }
+    .contacts__input{
+        background: #dcd2c9;
+    }
+    .contacts__input[placeholder], .contacts__input *, .nav__link{
+        color: black;
+    }
+    .img-btn{
+        background-image: url(../img/sun.svg);
+    }
+    .contacts__link{
+        color: black;
+    }
+    @media (max-width: 1270px) {
+        .nav__menu{
+            background: #f6dcc7;
+        }
+      }
+      @media (max-width:930px) {
+        .nav__left {
+            background: #f6dcc7;
+        }
+    }
+}

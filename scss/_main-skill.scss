@@ -1,0 +1,34 @@
+.skill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(354px, 354px));
+    grid-column-gap: 38px;
+    grid-row-gap: 36px;
+    place-content: center;
+
+    &__wrapper {
+        padding: 0px clamp(1rem, -16.235rem + 24.15vw, 12.5rem);
+    }
+
+    &__item {
+        background: $itemBackground-2;
+        padding: 35px 24px;
+        border-radius: $borderRadius;
+        font-size: 18px;
+        line-height: 125.69%;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    &__content>*:not(:first-child) {
+        margin-top: 18px;
+    }
+}
+
+@media (max-width: 390px) {
+    .skill {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
