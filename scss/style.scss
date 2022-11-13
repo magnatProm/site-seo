@@ -121,7 +121,8 @@ body {
 
 .work__item:hover,
 .skill__item:hover {
-    box-shadow: rgb(100 100 145) 0px 0px 30px 12px inset;
+    transition: 0.2s cubic-bezier(0.35, 1, 0.86, 1.44);
+    box-shadow: rgb(100 100 145) 0px 0px 0px 10px inset;
 }
 
 [class*="item"]:not(.news__item) {
