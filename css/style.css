@@ -701,6 +701,7 @@ body {
 .news__title {
   line-height: 125.69%;
   font-size: 20px;
+  font-weight: 600;
 }
 @-webkit-keyframes newsAnimation {
   0% {
