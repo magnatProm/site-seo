@@ -698,6 +698,10 @@ body {
   -webkit-animation: newsAnimation 1s ease 0s 1 normal forwards;
           animation: newsAnimation 1s ease 0s 1 normal forwards;
 }
+.news__title {
+  line-height: 125.69%;
+  font-size: 20px;
+}
 @-webkit-keyframes newsAnimation {
   0% {
     opacity: 0;

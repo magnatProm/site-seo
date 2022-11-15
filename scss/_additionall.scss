@@ -58,6 +58,11 @@
         animation: newsAnimation 1s ease 0s 1 normal forwards;
     }
 
+    &__title {
+        line-height: 125.69%;
+        font-size: 20px;
+    }
+
     @keyframes newsAnimation {
         0% {
             opacity: 0;

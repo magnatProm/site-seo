@@ -143,7 +143,7 @@ function news() {
                 <article class="news__item">
                         <div class="news__content">
                             <img src="./img/Rectangle.png" alt="img">
-                            <p>${text_3.join(' ')}</p>
+                            <h4 class="news__title">${text_3.join(' ')}</h4>
                         </div>
                     </article>
                 `);
