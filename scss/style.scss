@@ -115,6 +115,10 @@ body {
     background-position: center;
 }
 
+*:disabled {
+    display: none;
+}
+
 .background {
     background: $background;
 }

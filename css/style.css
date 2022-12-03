@@ -110,6 +110,10 @@ body {
   background-position: center;
 }
 
+*:disabled {
+  display: none;
+}
+
 .background {
   background: rgb(20, 20, 20);
 }
